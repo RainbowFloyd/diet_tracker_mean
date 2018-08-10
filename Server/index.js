@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static(__dirname + '../index.html'));
+app.use(express.static(__dirname + `/../client`));
 
 
 app.get('/', function(req, res) {
 	console.log('hello');
+	console.log(__dirname)
 	res.sendStatus(200);
 });
 
