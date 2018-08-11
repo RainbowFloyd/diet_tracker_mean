@@ -16,7 +16,7 @@ angular.module('app')
 	}
 
 	this.submitFood = function(food, calCount) {
-		console.log('food submitted')
+		console.log('food submitted ', food)
 	};
 })
 
