@@ -1,10 +1,11 @@
 angular.module('app')
 .controller('appCtrl', function($scope) {
 	this.calCount = 0;
+
 	this.viewObj = {
 		onScreen: {
 			addFood: false,
-			trackFood: false,	
+			trackFood: false,
 		},
 		currentView: '',
 		updateScreen: function(view) {
@@ -13,6 +14,7 @@ angular.module('app')
 			this.currentView = view;
 		}
 	}
+
 	this.submitFood = function(food, calCount) {
 		console.log('food submitted')
 	};
