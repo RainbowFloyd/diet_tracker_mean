@@ -1,4 +1,5 @@
 <div>
 	<cal-count cal-count='$ctrl.calCount'></cal-count>
-	<nav-bar></nav-bar>
+	<nav-bar  view-obj='$ctrl.viewObj'></nav-bar>
+	<add-food ng-show='$ctrl.viewObj.onScreen.addFood' submit-food='$ctrl.submitFood'></add-food>
 </div>

@@ -1,6 +1,8 @@
 angular.module('app')
 
 .component('navBar', {
-	binding: {},
+	bindings: {
+		viewObj: '<',
+	},
 	templateUrl: '../templates/navBar.html'
 })
