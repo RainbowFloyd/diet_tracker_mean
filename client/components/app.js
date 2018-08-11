@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('appCtrl', function($scope) {
+.controller('appCtrl', function(appService) {
 	this.calCount = 0;
 
 	this.viewObj = {
@@ -16,7 +16,9 @@ angular.module('app')
 	}
 
 	this.submitFood = function(food, calCount) {
-		console.log('food submitted ', food)
+		appService.addFood(food, calCount, function () {
+			console.log('done')
+		});
 	};
 })
 
