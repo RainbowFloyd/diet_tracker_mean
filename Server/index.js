@@ -5,6 +5,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.use(express.static(__dirname + `/../client`));
 app.use(express.static(__dirname + '/../node_modules'));
 
@@ -14,8 +15,11 @@ app.get('/', function(req, res) {
 });
 
 app.post('/addFood', function(req, res) {
-	console.log('req ', req.body);
-	res.sendStatus(200);
+	let food = req.body.foodName;
+	let calCount = Number(req.body.calCount);
+	db.addFood(food, calCount, function() {
+		res.send(200);
+	});
 })
 
 const port = 1128

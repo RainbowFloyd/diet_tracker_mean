@@ -28,13 +28,13 @@ let consumedFoodSchema = mongoose.Schema({
 		CalCount: Number
 });
 
-let addFood = function(foodName, calCount, callBack) {
+let addFood = function(foodName, calCount, callback) {
 	let newFood = new simpleFood({
 		_id: new mongoose.Types.ObjectId(),
 		foodName: foodName,
 		calCount: calCount
 	})
-	simpleFood.update(foodName, {$set: calCount}, {upsert:true}, function(err, foodSaved) {
+	simpleFood.update({foodName: foodName}, {$set: {calCount: calCount}}, {upsert:true}, function(err, foodSaved) {
 		if (err) {
 			console.log('there was an error saving to the database', err);
 		} else {

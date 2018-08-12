@@ -16,9 +16,7 @@ angular.module('app')
 	}
 
 	this.submitFood = function(food, calCount) {
-		appService.addFood(food, calCount, function () {
-			console.log('done')
-		});
+		appService.addFood(food, calCount);
 	};
 })
 
