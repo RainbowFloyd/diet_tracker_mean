@@ -1,4 +1,4 @@
 <div>
-	<select foods='$ctrl.foods' ng-model='selected' ng-change=''>
+	<select ng-options='food.foodName for food in $ctrl.foods' ng-model='selectedFood' ng-change='$ctrl.trackFood(selectedFood)'>
 	</select>
 </div>

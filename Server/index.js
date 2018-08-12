@@ -23,7 +23,20 @@ app.post('/addFood', function(req, res) {
 
 app.get('/trackFood', function(req, res) {
 	db.getFood(function(data) {
-		console.log('got this back ', data);
+		res.send(data);
+	})
+})
+
+app.post('/trackFood', function(req, res) {
+	let foodName = req.body.foodName;
+	let calCount = req.body.calCount;
+	db.trackFood(foodName, calCount, function() {
+		res.sendStatus(200);
+	})
+})
+
+app.get('/getTracked', function(req, res) {
+	db.getTrackFood(function(data) {
 		res.send(data);
 	})
 })

@@ -4,7 +4,8 @@ angular.module('app')
 	bindings: {
 		viewObj: '<',
 		submitFood: '<',
-		foods: '<'
+		foods: '<',
+		trackFood: '<'
 	},
 	templateUrl: '../templates/trackFood.html'
 })
