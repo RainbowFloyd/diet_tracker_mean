@@ -1,6 +1,11 @@
 angular.module('app')
 .controller('appCtrl', function(appService) {
 	this.calCount = 0;
+	this.foods = [];
+
+	this.$onInit = function() {
+		this.getFood()
+	}
 
 	this.viewObj = {
 		onScreen: {
@@ -18,6 +23,12 @@ angular.module('app')
 	this.submitFood = function(food, calCount) {
 		appService.addFood(food, calCount);
 	};
+
+	this.getFood = function() {
+		appService.getFood(function(data) {
+			this.foods = data;
+		});
+	}
 })
 
 .component('app', {

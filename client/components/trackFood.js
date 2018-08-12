@@ -3,7 +3,8 @@ angular.module('app')
 .component('trackFood', {
 	bindings: {
 		viewObj: '<',
-		submitFood: '<'
+		submitFood: '<',
+		foods: '<'
 	},
 	templateUrl: '../templates/trackFood.html'
 })

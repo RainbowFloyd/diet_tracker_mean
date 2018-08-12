@@ -38,10 +38,22 @@ let addFood = function(foodName, calCount, callback) {
 		if (err) {
 			console.log('there was an error saving to the database', err);
 		} else {
-			console.log(foodSaved + ' was saved to the database');
+			console.log(foodSaved, ' was saved to the database');
 		}
 	})
 	callback();
 }
 
+let getFood = function(callback) {
+	simpleFood.find().exec(function(err, docs) {
+		if(err) {
+			console.log('There was an error getting food from db ', err)
+		} else {
+			callback(docs);
+		}
+	})
+
+}
+
+module.exports.getFood = getFood
 module.exports.addFood = addFood

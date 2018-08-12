@@ -8,7 +8,18 @@ angular.module('app')
 		})
 		.then(function({data}) {
 			console.log(data);
-			console.log('Service then')
+			console.log('Service then ', data)
+		})
+		.catch(function(err) {
+			console.log(err);
+		})
+	}
+
+	this.getFood = function(callback) {
+		$http.get('/trackFood')
+		.then(function({data}) {
+			console.log('service data ', data);
+			callback({data});
 		})
 		.catch(function(err) {
 			console.log(err);
