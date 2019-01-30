@@ -6,6 +6,9 @@
   "scripts": {
     "server-dev": "nodemon server/index.js"
   },
+  "engines": {
+    "node": "8.9.4"
+  },
   "author": "Adam Floyd",
   "license": "ISC",
   "devDependencies": {},
